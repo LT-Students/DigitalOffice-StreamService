@@ -1,0 +1,12 @@
+# To learn more about .editorconfig see https://aka.ms/editorconfigdocs
+
+# All files
+[*]
+indent_style = space
+indent_size=2
+insert_final_newline=true
+dotnet_style_prefer_is_null_check_over_reference_equality_method=true:silent
+
+# Xml files
+[*.xml]
+indent_size = 2
