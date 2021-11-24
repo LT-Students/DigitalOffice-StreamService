@@ -11,12 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\StreamService.Data\StreamService.Data.csproj" />
-    <ProjectReference Include="..\StreamService.Mappers\StreamService.Mappers.csproj" />
+    <PackageReference Include="LT.DigitalOffice.Kernel" Version="1.1.51" />
   </ItemGroup>
 
 </Project>
