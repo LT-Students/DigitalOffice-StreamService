@@ -24,8 +24,8 @@ using LT.DigitalOffice.Kernel.Helpers;
 namespace LT.DigitalOffice.StreamService
 {
   public class Startup : BaseApiInfo
-    {
-      public const string CorsPolicyName = "LtDoCorsPolicy";
+  {
+    public const string CorsPolicyName = "LtDoCorsPolicy";
 
     private readonly RabbitMqConfig _rabbitMqConfig;
     private readonly BaseServiceInfoConfig _serviceInfoConfig;
