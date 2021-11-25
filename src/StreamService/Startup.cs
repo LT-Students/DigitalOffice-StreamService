@@ -2,10 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using HealthChecks.UI.Client;
-using LT.DigitalOffice.Kernel.Configurations;
-using LT.DigitalOffice.Kernel.Extensions;
-using LT.DigitalOffice.Kernel.Middlewares.ApiInformation;
-using LT.DigitalOffice.Kernel.Middlewares.Token;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -20,6 +16,12 @@ using LT.DigitalOffice.StreamService.Models.Dto.Configuration;
 using LT.DigitalOffice.Kernel.RedisSupport.Helpers.Interfaces;
 using LT.DigitalOffice.Kernel.RedisSupport.Helpers;
 using LT.DigitalOffice.Kernel.Helpers;
+using LT.DigitalOffice.Kernel.BrokerSupport.Extensions;
+using LT.DigitalOffice.Kernel.BrokerSupport.Configurations;
+using LT.DigitalOffice.Kernel.BrokerSupport.Middlewares.Token;
+using LT.DigitalOffice.Kernel.Middlewares.ApiInformation;
+using LT.DigitalOffice.Kernel.Configurations;
+using LT.DigitalOffice.Kernel.Extensions;
 
 namespace LT.DigitalOffice.StreamService
 {

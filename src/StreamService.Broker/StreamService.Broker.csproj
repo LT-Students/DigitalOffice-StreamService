@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -6,12 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <Import Project="$(ProjectDir)..\..\Common.Configurations.targets" />
+  
   <ItemGroup>
     <Folder Include="Consumers\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="LT.DigitalOffice.Kernel" Version="1.1.51" />
   </ItemGroup>
 
 </Project>
