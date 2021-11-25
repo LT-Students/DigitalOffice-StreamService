@@ -29,7 +29,7 @@
     <PackageReference Include="LT.DigitalOffice.Kernel" Version="1.1.53" />
     <PackageReference Include="LT.DigitalOffice.Kernel.BrokerSupport" Version="1.0.1" />
     <PackageReference Include="LT.DigitalOffice.Kernel.RedisSupport" Version="1.0.1" />
-    <PackageReference Include="LT.DigitalOffice.Models" Version="1.0.50" />
+    <PackageReference Include="LT.DigitalOffice.Models" Version="1.0.51" />
   </ItemGroup>
 
   <ItemGroup Condition="$(AssemblyName.Contains('.UnitTests'))">
