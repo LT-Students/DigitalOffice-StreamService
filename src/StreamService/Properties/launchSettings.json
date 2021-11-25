@@ -2,14 +2,12 @@
   "profiles": {
     "StreamService": {
       "commandName": "Project",
-      "dotnetRunMessages": "true",
-      "launchBrowser": false,
-      "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "RabbitMqUsername": "guest",
         "RabbitMqPassword": "guest",
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "externalUrlConfiguration": true
     }
   }
 }
