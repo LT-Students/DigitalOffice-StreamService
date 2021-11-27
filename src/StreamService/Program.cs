@@ -27,12 +27,12 @@ namespace LT.DigitalOffice.StreamService
         }
 
         Log.Logger = new LoggerConfiguration().ReadFrom
-            .Configuration(configuration)
-            .Enrich.WithProperty("Service", "StreamService")
-            .WriteTo.Seq(
-                serverUrl: seqServerUrl,
-                apiKey: seqApiKey)
-            .CreateLogger();
+          .Configuration(configuration)
+          .Enrich.WithProperty("Service", "StreamService")
+          .WriteTo.Seq(
+              serverUrl: seqServerUrl,
+              apiKey: seqApiKey)
+          .CreateLogger();
 
         try
         {
@@ -50,10 +50,10 @@ namespace LT.DigitalOffice.StreamService
 
       public static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
-            .UseSerilog()
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-              webBuilder.UseStartup<Startup>();
-            });
+          .UseSerilog()
+          .ConfigureWebHostDefaults(webBuilder =>
+          {
+            webBuilder.UseStartup<Startup>();
+          });
   }
 }

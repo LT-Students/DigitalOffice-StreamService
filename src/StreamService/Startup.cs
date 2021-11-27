@@ -185,7 +185,6 @@ namespace LT.DigitalOffice.StreamService
 
       services.AddMassTransit(x =>
       {
-
         x.UsingRabbitMq((context, cfg) =>
         {
           cfg.Host(_rabbitMqConfig.Host, "/", host =>
@@ -193,9 +192,7 @@ namespace LT.DigitalOffice.StreamService
             host.Username(username);
             host.Password(password);
           });
-
         });
-
         x.AddRequestClients(_rabbitMqConfig);
       });
 

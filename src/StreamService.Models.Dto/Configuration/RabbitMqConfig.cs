@@ -4,6 +4,5 @@ namespace LT.DigitalOffice.StreamService.Models.Dto.Configuration
 {
   public class RabbitMqConfig : BaseRabbitMqConfig
   {
-
   }
 }
