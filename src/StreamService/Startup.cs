@@ -10,8 +10,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
 using Serilog;
-using StackExchange.Redis;
-using LT.DigitalOffice.Kernel.RedisSupport.Configurations;
 using LT.DigitalOffice.StreamService.Models.Dto.Configuration;
 using LT.DigitalOffice.Kernel.BrokerSupport.Extensions;
 using LT.DigitalOffice.Kernel.BrokerSupport.Configurations;
@@ -19,9 +17,6 @@ using LT.DigitalOffice.Kernel.BrokerSupport.Middlewares.Token;
 using LT.DigitalOffice.Kernel.Middlewares.ApiInformation;
 using LT.DigitalOffice.Kernel.Configurations;
 using LT.DigitalOffice.Kernel.Extensions;
-using LT.DigitalOffice.Kernel.RedisSupport.Helpers.Interfaces;
-using LT.DigitalOffice.Kernel.RedisSupport.Helpers;
-using LT.DigitalOffice.Kernel.Helpers;
 
 namespace LT.DigitalOffice.StreamService
 {
@@ -69,18 +64,6 @@ namespace LT.DigitalOffice.StreamService
           });
       });
 
-      if (int.TryParse(Environment.GetEnvironmentVariable("RedisCacheLiveInMinutes"), out int redisCacheLifeTime))
-      {
-        services.Configure<RedisConfig>(options =>
-        {
-          options.CacheLiveInMinutes = redisCacheLifeTime;
-        });
-      }
-      else
-      {
-        services.Configure<RedisConfig>(Configuration.GetSection(RedisConfig.SectionName));
-      }
-
       services.Configure<TokenConfiguration>(Configuration.GetSection("CheckTokenMiddleware"));
       services.Configure<BaseRabbitMqConfig>(Configuration.GetSection(BaseRabbitMqConfig.SectionName));
       services.Configure<BaseServiceInfoConfig>(Configuration.GetSection(BaseServiceInfoConfig.SectionName));
@@ -93,24 +76,6 @@ namespace LT.DigitalOffice.StreamService
           options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
         })
         .AddNewtonsoftJson();
-
-      string redisConnStr = Environment.GetEnvironmentVariable("RedisConnectionString");
-      if (string.IsNullOrEmpty(redisConnStr))
-      {
-        redisConnStr = Configuration.GetConnectionString("Redis");
-
-        Log.Information($"Redis connection string from appsettings.json was used. Value '{HidePasswordHelper.HidePassword(redisConnStr)}'");
-      }
-      else
-      {
-        Log.Information($"Redis connection string from environment was used. Value '{HidePasswordHelper.HidePassword(redisConnStr)}'");
-      }
-
-      services.AddSingleton<IConnectionMultiplexer>(
-        x => ConnectionMultiplexer.Connect(redisConnStr));
-
-      services.AddTransient<ICacheNotebook, CacheNotebook>();
-      services.AddTransient<IRedisHelper, RedisHelper>();
 
       services.AddBusinessObjects();
 
