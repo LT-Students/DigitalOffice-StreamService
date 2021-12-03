@@ -22,9 +22,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamService.Models.Dto", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamService.Broker", "src\StreamService.Broker\StreamService.Broker.csproj", "{64DE7940-2EF0-40CD-8944-530BFEA478C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamService.Business", "src\StreamService.Business\StreamService.Business.csproj", "{EC23CA73-8F12-4024-95B7-B5B0AACBF86C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamService.Business", "src\StreamService.Business\StreamService.Business.csproj", "{EC23CA73-8F12-4024-95B7-B5B0AACBF86C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamService.Validation", "src\StreamService.Validation\StreamService.Validation.csproj", "{33A32CA0-4F4E-404F-89B4-694DDD767006}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamService.Validation", "src\StreamService.Validation\StreamService.Validation.csproj", "{33A32CA0-4F4E-404F-89B4-694DDD767006}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
