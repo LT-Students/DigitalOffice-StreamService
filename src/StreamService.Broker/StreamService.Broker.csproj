@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="$(ProjectDir)..\..\Common.Configurations.targets" />
+
+  <ItemGroup>
+    <Folder Include="Consumers\" />
+  </ItemGroup>
+
+</Project>
